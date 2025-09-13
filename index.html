@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ハワイ家族旅行しおり / Hawaii Family Trip (Oct 4–12, 2025)｜Bilingual – Mobile</title>
+  <title>ハワイ家族旅行しおり / Hawaii Family Trip (Oct 4–12, 2025)｜Bilingual</title>
   <style>
-    /* === Base (Mobile-first) === */
     :root{ --bg:#f8fafc; --paper:#ffffff; --ink:#0f172a; --muted:#475569; --brand:#eab308; --line:#e2e8f0; --thead:#fef3c7; --row:#f9fafb; }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans JP","Yu Gothic UI",sans-serif;line-height:1.65}
@@ -18,27 +17,18 @@
     h2{margin:18px 0 10px;font-size:clamp(16px,4.6vw,22px)}
     h3{margin:14px 0 8px;font-size:clamp(15px,4.2vw,18px)}
     section{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
-
-    /* Cards & media */
     .info-card{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;margin-bottom:14px}
     .info-card img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
     .img-stack{display:flex;flex-direction:column;gap:8px}
     .map-large{width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
     .roadtrip-img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0}
-
-    /* Tables: responsive scroll */
     table{border-collapse:collapse;width:100%;font-size:0.95em;margin:6px 0;display:block;overflow-x:auto;white-space:nowrap}
     th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
     th{background:var(--thead);font-weight:700}
     tr:nth-child(even) td{background:var(--row)}
-
-    /* Print tweaks */
     @media print{body{background:var(--paper)} header{box-shadow:none;border:none} section{page-break-inside:avoid} h2{page-break-before:always} h2:first-of-type{page-break-before:auto}}
-
-    /* >= Tablet/Desktop */
     @media (min-width:768px){
       .wrap{max-width:980px;padding:24px}
-      section{padding:18px;margin:18px 0;border-radius:14px}
       .info-card{grid-template-columns:2fr 1fr;gap:12px}
     }
   </style>
@@ -161,6 +151,20 @@
       …
       <h3>Mama’s Fish House</h3>
       <img src="Hawaii/MahiMahi.png" alt="Mahi Mahi" loading="lazy">
+    </section>
+
+    <!-- Flights -->
+    <section>
+      <h2>✈️ フライト詳細 / Flights</h2>
+      <table>
+        <tr><th>日付 / Date</th><th>区間 / Route</th><th>便名 / Flight</th><th>出発 / Departure</th><th>到着 / Arrival</th><th>座席 / Seats</th></tr>
+        <tr><td>10/4（土）</td><td>東京（羽田） → ホノルル</td><td>JL6410</td><td>20:15 (HND)</td><td>09:00 (HNL)</td><td>順子:1A ・ 瑛介:1B</td></tr>
+        <tr><td>10/4（土）</td><td>シドニー → ホノルル</td><td>QF103</td><td>19:25 (SYD)</td><td>08:50 (HNL)</td><td>悠介:57B ・ Brenna:57A</td></tr>
+        <tr><td>10/7（火）</td><td>ホノルル → マウイ（カフルイ）</td><td>HA236</td><td>10:52 (HNL)</td><td>11:35 (OGG)</td><td>家族全員 21A–21F</td></tr>
+        <tr><td>10/10（金）</td><td>マウイ（カフルイ） → ホノルル</td><td>HA265</td><td>13:30 (OGG)</td><td>14:14 (HNL)</td><td>家族全員 20A–20F</td></tr>
+        <tr><td>10/12（日）</td><td>ホノルル → 東京（羽田）</td><td>JL073</td><td>12:15 (HNL)</td><td>15:55+1 (HND)</td><td>順子:4A ・ 瑛介:4B</td></tr>
+        <tr><td>10/12（日）</td><td>ホノルル → シドニー</td><td>QF104</td><td>11:00 (HNL)</td><td>18:30 (SYD+1)</td><td>悠介:52J ・ Brenna:52K</td></tr>
+      </table>
     </section>
   </div>
 </body>
