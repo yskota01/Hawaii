@@ -33,15 +33,15 @@
       width:100%;
       font-size:0.95em;
       margin:6px 0;
-      display:table;          /* ← block をやめる */
-      table-layout:fixed;     /* 固定レイアウトで折り返しやすく */
+      display:table;          /* blockをやめる */
+      table-layout:fixed;     /* 固定レイアウトで折り返し */
     }
     th,td{
       padding:8px 10px;
       text-align:left;
       border-bottom:1px solid var(--line);
       vertical-align:top;
-      white-space:normal;     /* ← nowrap を解除 */
+      white-space:normal;     /* nowrapを解除 */
       overflow-wrap:anywhere; /* 長い語も折り返す */
       word-break:normal;
     }
@@ -59,7 +59,7 @@
       h2:first-of-type{page-break-before:auto}
     }
 
-    /* タブレット以上：カードを2カラムにしつつ画像は260px上限 */
+    /* タブレット以上：カードを2カラム、画像は260px上限 */
     @media (min-width:768px){
       .wrap{max-width:980px;padding:24px}
       .info-card{grid-template-columns:2fr 1fr;gap:12px}
@@ -68,8 +68,388 @@
   </style>
 </head>
 <body>
-  <!-- ここから下は「本文そのまま」でOK（旅程表／ホテル／マップ／ゴルフ／アクティビティ／Hana／スイーツ／レストラン／フライト） -->
-  <!-- あなたが直前に送ってくれたHTML本文を、この<style>ごと全体差し替えで使ってください -->
-  <!-- ※もし貼り直しが大変なら、<style>だけ置き換えても効果は同じです -->
+  <div class="wrap">
+    <header>
+      <div class="ribbon">母の60歳お祝い / Mother’s 60th Birthday 🎉</div>
+      <h1>ハワイ家族旅行しおり / Hawaii Family Trip Itinerary</h1>
+      <p>期間 / Dates: <strong>2025年10月4日（土）〜 10月12日（日） / Oct 4 (Sat) – Oct 12 (Sun), 2025</strong><br>
+         行き先 / Destinations: <strong>オアフ島 & マウイ島 / Oahu & Maui</strong></p>
+    </header>
+
+    <!-- Itinerary -->
+    <section>
+      <h2>📅 旅程表 / Itinerary（詳細 / Detailed）</h2>
+      <table>
+        <tr><th>日付 / Date</th><th>スケジュール / Schedule</th><th>エリア / Area</th></tr>
+        <tr>
+          <td><strong>10/4（土）</strong><br>Oct 4</td>
+          <td>
+            <ul>
+              <li><strong>朝:</strong> ホノルル到着（HNL）→ Halekulani へ移動・チェックイン</li>
+              <li><strong>昼:</strong> ランチ・休憩</li>
+              <li><strong>午後:</strong> ダイヤモンドヘッド軽ハイク</li>
+              <li><strong>夜:</strong> ワイキキ散策・ディナー</li>
+            </ul>
+          </td>
+          <td>オアフ（ホノルル）</td>
+        </tr>
+        <tr>
+          <td><strong>10/5（日）</strong><br>Oct 5</td>
+          <td>
+            <ul>
+              <li><strong>朝:</strong> Halekulani → The Ritz-Carlton Waikiki へ移動</li>
+              <li><strong>昼:</strong> ショッピング＆ビーチ</li>
+              <li><strong>午後:</strong> <strong>クアロア牧場 半日ツアー</strong></li>
+              <li><strong>夜:</strong> タンタラス夜景など</li>
+            </ul>
+          </td>
+          <td>オアフ</td>
+        </tr>
+        <tr>
+          <td><strong>10/6（月）</strong><br>Oct 6</td>
+          <td>
+            <ul>
+              <li><strong>朝〜午後:</strong> <strong>Ko Olina Golf Club</strong> ラウンド</li>
+              <li><strong>夕方:</strong> ワイキキ戻り・フリー</li>
+            </ul>
+          </td>
+          <td>オアフ（コオリナ）</td>
+        </tr>
+        <tr>
+          <td><strong>10/7（火）</strong><br>Oct 7</td>
+          <td>
+            <ul>
+              <li><strong>朝:</strong> まりか合流 → HNLへ</li>
+              <li><strong>午前:</strong> <strong>HA236</strong> でマウイ（OGG）へ</li>
+              <li><strong>午後:</strong> <strong>Andaz Maui at Wailea</strong> チェックイン・プール＆ビーチ</li>
+              <li><strong>夜:</strong> ワイレアでディナー</li>
+            </ul>
+          </td>
+          <td>オアフ → マウイ</td>
+        </tr>
+        <tr>
+          <td><strong>10/8（水）</strong><br>Oct 8</td>
+          <td>
+            <ul>
+              <li><strong>終日:</strong> <strong>Wailea Golf Club（1日目）</strong> ラウンド</li>
+            </ul>
+          </td>
+          <td>マウイ（ワイレア）</td>
+        </tr>
+        <tr>
+          <td><strong>10/9（木）</strong><br>Oct 9</td>
+          <td>
+            <ul>
+              <li><strong>終日:</strong> <strong>Wailea Golf Club（2日目）</strong> ラウンド</li>
+              <li>オプション：ラハイナ散策</li>
+            </ul>
+          </td>
+          <td>マウイ（ワイレア）</td>
+        </tr>
+        <tr>
+          <td><strong>10/10（金）</strong><br>Oct 10</td>
+          <td>
+            <ul>
+              <li><strong>昼:</strong> <strong>HA265</strong> でホノルルへ（OGG → HNL）</li>
+              <li><strong>午後:</strong> ホノルル到着・チェックイン（ホテルTBD）</li>
+              <li><strong>夜:</strong> ディナー候補：53 By The Sea / Michel’s</li>
+            </ul>
+          </td>
+          <td>マウイ → オアフ</td>
+        </tr>
+        <tr>
+          <td><strong>10/11（土）</strong><br>Oct 11</td>
+          <td>
+            <ul>
+              <li><strong>終日:</strong> フリー（ショッピング、カフェ、ビーチ）</li>
+              <li><strong>メモ:</strong> まりか帰国</li>
+            </ul>
+          </td>
+          <td>オアフ（ホノルル）</td>
+        </tr>
+        <tr>
+          <td><strong>10/12（日）</strong><br>Oct 12</td>
+          <td>
+            <ul>
+              <li><strong>午前:</strong> チェックアウト・空港へ</li>
+              <li><strong>昼:</strong> 出国</li>
+            </ul>
+          </td>
+          <td>ホノルル出発</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Hotels -->
+    <section>
+      <h2>🏨 ホテル詳細 / Hotels</h2>
+
+      <h3>Halekulani（10/4–5）</h3>
+      <div class="info-card">
+        <div>
+          <table>
+            <tr><th>所在地 / Location</th><td>2199 Kalia Rd, Honolulu, HI 96815</td></tr>
+            <tr><th>部屋 / Room</th><td>Diamond Head Ocean Front Prime（Twin beds 確約）</td></tr>
+            <tr><th>予約番号 / Booking No.</th><td>76559SF013609 / 76559SF013608</td></tr>
+            <tr><th>料金 / Rate</th><td>USD 1,289 / 泊</td></tr>
+          </table>
+        </div>
+        <img src="Hawaii/Halekulani.png" alt="Halekulani" loading="lazy">
+      </div>
+
+      <h3>The Ritz-Carlton Residences Waikiki Beach（10/5–7）</h3>
+      <div class="info-card">
+        <div>
+          <table>
+            <tr><th>エリア / Area</th><td>ワイキキ / Waikiki</td></tr>
+            <tr><th>部屋 / Room</th><td>デラックスオーシャンビュー × 2室</td></tr>
+            <tr><th>予約番号 / Booking No.</th><td>99531620</td></tr>
+            <tr><th>料金 / Total</th><td>USD 3,260.47</td></tr>
+          </table>
+        </div>
+        <img src="Hawaii/Ritz waikiki.png" alt="Ritz Waikiki" loading="lazy">
+      </div>
+
+      <h3>Andaz Maui at Wailea Resort（10/7–10）</h3>
+      <div class="info-card">
+        <div>
+          <table>
+            <tr><th>所在地 / Location</th><td>3550 Wailea Alanui Dr, Wailea, HI 96753</td></tr>
+            <tr><th>部屋 / Room</th><td>3 Bedroom Ilikai Villa – 1 King + 3 Queens（5名）</td></tr>
+            <tr><th>予約番号 / Booking No.</th><td>3584153</td></tr>
+            <tr><th>料金 / Total</th><td>USD 11,888.21（内訳：10/7 $3,200・10/8 $3,417・10/9 $3,311＋税サ $1,960.21）</td></tr>
+          </table>
+        </div>
+        <img src="Hawaii/Andaz.png" alt="Andaz Maui" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Maps -->
+    <section>
+      <h2>🗺️ マップ / Maps</h2>
+      <h3>マウイ島 / Maui</h3>
+      <img src="Hawaii/maui-map.png" class="map-large" alt="Maui map" loading="lazy">
+      <h3>オアフ島 / Oahu</h3>
+      <img src="Hawaii/oahu-map.png" class="map-large" alt="Oahu map" loading="lazy">
+    </section>
+
+    <!-- Golf -->
+    <section>
+      <h2>⛳ ゴルフ / Golf</h2>
+
+      <h3>Ko Olina Golf Club（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>名物ウォーターハザードが美しいチャンピオンシップコース。<br>
+             朝のスタートで涼しく、プレー後にコオリナ・ラグーン散歩も◎。</p>
+          <ul><li>住所：92-1220 Aliinui Dr, Kapolei, HI</li><li>メモ：レンタルクラブあり・ドレスコード要確認</li></ul>
+        </div>
+        <img src="Hawaii/Koolina.png" alt="Ko Olina Golf Club" loading="lazy">
+      </div>
+
+      <h3>Wailea Golf Club（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>ワイレアの代表的リゾートコース。海を望む開放的な景観でリゾート感満点。</p>
+          <ul><li>コース：Gold / Emerald</li><li>メモ：昼は日差し強め、帽子＆日焼け対策を</li></ul>
+        </div>
+        <img src="Hawaii/Wailea.png" alt="Wailea Golf Club" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section>
+      <h2>🎡 アクティビティ / Activities</h2>
+
+      <h3>カカアコ・ファーマーズマーケット（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>ローカルのグルメや雑貨が集まる土曜朝の人気マーケット。混雑前に到着推奨。</p>
+          <ul><li>ハイライト：フードトラック、ハンドクラフト</li><li>Tips：朝9時前が歩きやすい</li></ul>
+        </div>
+        <img src="Hawaii/Kakaoko.png" alt="Kakaako" loading="lazy">
+      </div>
+
+      <h3>マノア滝ハイキング（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>熱帯雨林の木道を進む初心者向けトレイル。雨具・滑りにくい靴推奨。</p>
+          <ul><li>距離：約3km 往復</li><li>所要：1.5〜2時間</li></ul>
+        </div>
+        <div class="img-stack">
+          <img src="Hawaii/manoa.png" alt="Manoa Falls" loading="lazy">
+          <img src="Hawaii/manoa2.png" alt="Manoa Trail" loading="lazy">
+        </div>
+      </div>
+
+      <h3>タンタラスの丘 夜景（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>プウ・ウアラカア州立公園からホノルルの夜景を一望。サンセット前到着がベスト。</p>
+        </div>
+        <img src="Hawaii/tantaras.png" alt="Tantalus" loading="lazy">
+      </div>
+
+      <h3>イアオ渓谷州立公園（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>尖峰イアオ・ニードルと緑濃い渓谷。遊歩道で手軽に散策できます。</p>
+        </div>
+        <img src="Hawaii/iao.png" alt="Iao Valley" loading="lazy">
+      </div>
+
+      <h3>ラハイナ・タウン散策（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>歴史ある港町の雰囲気。中心部は混み合うため、周辺駐車場の活用を。</p>
+        </div>
+        <img src="Hawaii/Lahaina.png" alt="Lahaina" loading="lazy">
+      </div>
+
+      <h3>カアナパリ・ビーチ（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>白砂のロングビーチ。夕日の時間帯がおすすめ。</p>
+        </div>
+        <img src="Hawaii/kaanapari.png" alt="Kaanapali Beach" loading="lazy">
+      </div>
+
+      <h3>マウイ・オーシャン・センター（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>屋内でハワイ固有の海洋生物を鑑賞。チケットは事前購入がスムーズ。</p>
+        </div>
+        <img src="Hawaii/ocean.png" alt="Maui Ocean Center" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Road to Hana -->
+    <section>
+      <h2>🚗 おすすめロードトリップ / Recommended Road Trip</h2>
+      <h3>Road to Hana Day Trip（マウイ）</h3>
+      <p>日帰りで楽しむモデルコース。代表スポットと体験メモをまとめました。</p>
+
+      <h4>1) Ho‘okipa Beach Park（MM9）</h4>
+      <ul><li>朝でもウミガメに遭遇することあり。サーファー観戦も◎</li></ul>
+
+      <h4>2) Garden of Eden（MM10.5）</h4>
+      <ul><li>約1.5時間の植物園散策。虹色ユーカリ・滝・海の眺め</li></ul>
+
+      <h4>3) Ke‘anae Lookout（MM16–17）</h4>
+      <ul><li>黒い溶岩海岸と迫力の波。写真映えスポット</li></ul>
+
+      <h4>ランチ＆休憩</h4>
+      <ul>
+        <li>Coconut Glen’s（MM19）：ココナッツミルクアイス</li>
+        <li>Hana Farms（MM38）：ピザ（パイナップル＋ハラペーニョ）</li>
+      </ul>
+
+      <h4>4) Pipiwai Trail（MM42）</h4>
+      <ul><li>竹林と滝。マカヒク滝展望で折り返し</li></ul>
+
+      <h4>帰路：Laulima Farm（MM41）</h4>
+      <ul><li>果物プレートで休憩、静かな午後</li></ul>
+
+      <h4>Hana Town</h4>
+      <p>素朴な小さな町。ベーカリーや商店でひと休み。</p>
+
+      <div class="img-stack">
+        <img src="Hawaii/Hana.png" class="roadtrip-img" alt="Hana Town" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Sweets -->
+    <section>
+      <h2>🍨 スイーツ / Sweets</h2>
+
+      <h3>Island Vintage Coffee（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>名物アサイーボウルは濃厚ハニーとグラノーラの相性抜群。朝食にも◎</p>
+          <ul><li>おすすめ：Acai Bowl、コナコーヒー</li></ul>
+        </div>
+        <img src="Hawaii/acai.png" alt="Acai Bowl" loading="lazy">
+      </div>
+
+      <h3>Hawaiian Shaved Ice（各島）</h3>
+      <div class="info-card">
+        <div>
+          <p>ふわふわかき氷。トッピングにコンデンスミルクやアイスを追加して贅沢に。</p>
+          <ul><li>おすすめ：リリコイ／グアバ／ココナッツ</li></ul>
+        </div>
+        <img src="Hawaii/ice.png" alt="Shaved Ice" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Restaurants -->
+    <section>
+      <h2>🍽️ レストラン / Restaurants</h2>
+
+      <h3>53 By The Sea（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>海を望むロマンチックなダイニング。記念日に最適。</p>
+          <ul><li>Signature：シーフードパスタ、和牛ステーキ</li></ul>
+        </div>
+        <div class="img-stack">
+          <img src="Hawaii/53.png" alt="53 By The Sea" loading="lazy">
+          <img src="Hawaii/pasta.png" alt="Seafood Pasta at 53" loading="lazy">
+        </div>
+      </div>
+
+      <h3>Michel’s at the Colony Surf（オアフ）</h3>
+      <div class="info-card">
+        <div>
+          <p>オーシャンフロントの老舗フレンチ。サンセットが美しい名店。</p>
+          <ul><li>Signature：ロブスタービスク、テーブルサイド・シーザー</li></ul>
+        </div>
+        <img src="Hawaii/Mitchel.png" alt="Michel's" loading="lazy">
+      </div>
+
+      <h3>Nick’s Fishmarket（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>ワイレアの人気シーフード。サービスも安定。</p>
+          <ul><li>Signature：オパカパカのグリル、アヒタルタル</li></ul>
+        </div>
+        <img src="Hawaii/NIcks.png" alt="Nick's Fishmarket" loading="lazy">
+      </div>
+
+      <h3>Da Kitchen（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>ボリューム満点のローカルプレート。家族シェアにぴったり。</p>
+          <ul><li>Signature：ロコモコ、スパムむすび</li></ul>
+        </div>
+        <img src="Hawaii/rokomoko.png" alt="Loco Moco" loading="lazy">
+      </div>
+
+      <h3>Mama’s Fish House（マウイ）</h3>
+      <div class="info-card">
+        <div>
+          <p>海辺の超人気店。予約必須。</p>
+          <ul><li>Signature：ココナッツ・クラストのマヒマヒ、ポケボウル</li></ul>
+        </div>
+        <img src="Hawaii/MahiMahi.png" alt="Mahi Mahi" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Flights -->
+    <section>
+      <h2>✈️ フライト詳細 / Flights</h2>
+      <table>
+        <tr><th>日付 / Date</th><th>区間 / Route</th><th>便名 / Flight</th><th>出発 / Departure</th><th>到着 / Arrival</th><th>座席 / Seats</th></tr>
+        <!-- 順子・瑛介（JL6410/JL073） -->
+        <tr><td>10/4（土）</td><td>東京（羽田） → ホノルル</td><td>JL6410</td><td>20:15 (HND)</td><td>09:00 (HNL)</td><td>順子:1A ・ 瑛介:1B</td></tr>
+        <tr><td>10/12（日）</td><td>ホノルル → 東京（羽田）</td><td>JL073</td><td>12:15 (HNL)</td><td>15:55+1 (HND)</td><td>順子:4A ・ 瑛介:4B</td></tr>
+        <!-- 悠介・Brenna（QF） -->
+        <tr><td>10/4（土）</td><td>シドニー → ホノルル</td><td>QF103</td><td>19:25 (SYD)</td><td>08:50 (HNL)</td><td>悠介:57B ・ Brenna:57A</td></tr>
+        <tr><td>10/12（日）</td><td>ホノルル → シドニー</td><td>QF104</td><td>11:00 (HNL)</td><td>18:30 (SYD+1)</td><td>悠介:52J ・ Brenna:52K</td></tr>
+        <!-- 家族移動（HA） -->
+        <tr><td>10/7（火）</td><td>ホノルル → マウイ（カフルイ）</td><td>HA236</td><td>10:52 (HNL)</td><td>11:35 (OGG)</td><td>家族 21A–21F</td></tr>
+        <tr><td>10/10（金）</td><td>マウイ（カフルイ） → ホノルル</td><td>HA265</td><td>13:30 (OGG)</td><td>14:14 (HNL)</td><td>家族 20A–20F</td></tr>
+      </table>
+    </section>
+  </div>
 </body>
 </html>
