@@ -3,41 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ハワイ家族旅行しおり / Hawaii Family Trip (Oct 4–12, 2025)｜Bilingual</title>
+  <title>ハワイ家族旅行しおり / Hawaii Family Trip (Oct 4–12, 2025)｜Bilingual – Mobile</title>
   <style>
+    /* === Base (Mobile-first) === */
     :root{ --bg:#f8fafc; --paper:#ffffff; --ink:#0f172a; --muted:#475569; --brand:#eab308; --line:#e2e8f0; --thead:#fef3c7; --row:#f9fafb; }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans JP","Yu Gothic UI",sans-serif;line-height:1.6}
-    .wrap{max-width:980px;margin:auto;padding:24px}
-    header{position:relative;background:linear-gradient(90deg,#fff 0%, #fff7d6 50%, #fff 100%);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 6px 24px rgba(17,24,39,.06)}
-    .ribbon{position:absolute;right:16px;top:-14px;background:var(--brand);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;box-shadow:0 10px 20px rgba(234,179,8,.25)}
-    header h1{margin:0 0 6px 0;font-size:26px}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans JP","Yu Gothic UI",sans-serif;line-height:1.65}
+    body{font-size:clamp(14px, 3.7vw, 16px)}
+    .wrap{max-width:720px;margin:auto;padding:16px}
+    header{position:relative;background:linear-gradient(90deg,#fff 0%, #fff7d6 50%, #fff 100%);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(17,24,39,.06)}
+    .ribbon{position:absolute;right:12px;top:-12px;background:var(--brand);color:#fff;padding:6px 12px;border-radius:999px;font-weight:700;box-shadow:0 10px 20px rgba(234,179,8,.25);font-size:12px}
+    header h1{margin:0 0 6px 0;font-size:clamp(18px,5.2vw,26px)}
     header p{margin:4px 0;color:var(--muted)}
-    h2{margin:22px 0 12px;font-size:22px}
-    h3{margin:16px 0 8px;font-size:18px}
-    th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
-    table{border-collapse:collapse;width:100%;font-size:14px;margin:6px 0}
-    th{background:var(--thead);font-weight:700}
-    tr:nth-child(even) td{background:var(--row)}
-    section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
-    .map-large{width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
-    .info-card{display:grid;grid-template-columns:2fr 1fr;gap:12px;align-items:start;margin-bottom:18px}
+    h2{margin:18px 0 10px;font-size:clamp(16px,4.6vw,22px)}
+    h3{margin:14px 0 8px;font-size:clamp(15px,4.2vw,18px)}
+    section{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
+
+    /* Cards & media */
+    .info-card{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;margin-bottom:14px}
     .info-card img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
     .img-stack{display:flex;flex-direction:column;gap:8px}
+    .map-large{width:100%;height:auto;border:1px solid var(--line);border-radius:12px}
     .roadtrip-img{max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0}
+
+    /* Tables: responsive scroll */
+    table{border-collapse:collapse;width:100%;font-size:0.95em;margin:6px 0;display:block;overflow-x:auto;white-space:nowrap}
+    th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+    th{background:var(--thead);font-weight:700}
+    tr:nth-child(even) td{background:var(--row)}
+
+    /* Print tweaks */
     @media print{body{background:var(--paper)} header{box-shadow:none;border:none} section{page-break-inside:avoid} h2{page-break-before:always} h2:first-of-type{page-break-before:auto}}
-      /* --- Mobile optimizations --- */
-    table{display:block;overflow-x:auto;white-space:nowrap}
-    @media (max-width:640px){
-      .wrap{padding:16px}
-      body{font-size:15px}
-      h1{font-size:20px}
-      h2{font-size:18px}
-      h3{font-size:16px}
-      .info-card{grid-template-columns:1fr}
-      .info-card img{margin-top:8px}
-      header{padding:20px}
-      .map-large{width:100%}
+
+    /* >= Tablet/Desktop */
+    @media (min-width:768px){
+      .wrap{max-width:980px;padding:24px}
+      section{padding:18px;margin:18px 0;border-radius:14px}
+      .info-card{grid-template-columns:2fr 1fr;gap:12px}
     }
   </style>
 </head>
@@ -49,111 +51,116 @@
       <p>期間 / Dates: <strong>2025年10月4日（土）〜 10月12日（日） / Oct 4 (Sat) – Oct 12 (Sun), 2025</strong><br>行き先 / Destinations: <strong>オアフ島 & マウイ島 / Oahu & Maui</strong></p>
     </header>
 
-    <!-- 各セクション内の画像参照を相対パスに変換 -->
-
+    <!-- Hotels -->
     <section>
       <h2>🏨 ホテル詳細 / Hotels</h2>
       <h3>Halekulani（10/4–5）</h3>
       <div class="info-card">
         <div>…</div>
-        <img src="Hawaii/Halekulani.png" alt="Halekulani">
+        <img src="Hawaii/Halekulani.png" alt="Halekulani" loading="lazy">
       </div>
 
       <h3>ザ・リッツ・カールトン（10/5–7）</h3>
       <div class="info-card">
         <div>…</div>
-        <img src="Hawaii/Ritz waikiki.png" alt="Ritz Waikiki">
+        <img src="Hawaii/Ritz waikiki.png" alt="Ritz Waikiki" loading="lazy">
       </div>
 
       <h3>Andaz Maui at Wailea（10/7–10）</h3>
       <div class="info-card">
         <div>…</div>
-        <img src="Hawaii/Andaz.png" alt="Andaz Maui">
+        <img src="Hawaii/Andaz.png" alt="Andaz Maui" loading="lazy">
       </div>
     </section>
 
+    <!-- Maps -->
     <section>
       <h2>🗺️ マップ / Maps</h2>
       <h3>マウイ島 / Maui</h3>
-      <img src="Hawaii/maui-map.png" class="map-large" alt="Maui map">
+      <img src="Hawaii/maui-map.png" class="map-large" alt="Maui map" loading="lazy">
       <h3>オアフ島 / Oahu</h3>
-      <img src="Hawaii/oahu-map.png" class="map-large" alt="Oahu map">
+      <img src="Hawaii/oahu-map.png" class="map-large" alt="Oahu map" loading="lazy">
     </section>
 
+    <!-- Golf -->
     <section>
       <h2>⛳ ゴルフ / Golf</h2>
       <h3>Ko Olina Golf Club</h3>
       <div class="info-card">
         <div>…</div>
-        <img src="Hawaii/Koolina.png" alt="Ko Olina Golf Club">
+        <img src="Hawaii/Koolina.png" alt="Ko Olina Golf Club" loading="lazy">
       </div>
       <h3>Wailea Golf Club</h3>
       <div class="info-card">
         <div>…</div>
-        <img src="Hawaii/Wailea.png" alt="Wailea Golf Club">
+        <img src="Hawaii/Wailea.png" alt="Wailea Golf Club" loading="lazy">
       </div>
     </section>
 
+    <!-- Activities -->
     <section>
       <h2>🎡 アクティビティ / Activities</h2>
       <h3>カカアコ・ファーマーズマーケット</h3>
-      <img src="Hawaii/Kakaoko.png" alt="Kakaako">
+      <img src="Hawaii/Kakaoko.png" alt="Kakaako" loading="lazy">
       …
       <h3>マノア滝ハイキング</h3>
       <div class="img-stack">
-        <img src="Hawaii/manoa.png" alt="Manoa Falls">
-        <img src="Hawaii/manoa2.png" alt="Manoa Trail">
+        <img src="Hawaii/manoa.png" alt="Manoa Falls" loading="lazy">
+        <img src="Hawaii/manoa2.png" alt="Manoa Trail" loading="lazy">
       </div>
       …
       <h3>ラハイナ・タウン散策</h3>
-      <img src="Hawaii/Lahaina.png" alt="Lahaina">
+      <img src="Hawaii/Lahaina.png" alt="Lahaina" loading="lazy">
       …
       <h3>カアナパリ・ビーチ</h3>
-      <img src="Hawaii/kaanapari.png" alt="Kaanapali Beach">
+      <img src="Hawaii/kaanapari.png" alt="Kaanapali Beach" loading="lazy">
       …
       <h3>マウイ・オーシャン・センター</h3>
-      <img src="Hawaii/ocean.png" alt="Maui Ocean Center">
+      <img src="Hawaii/ocean.png" alt="Maui Ocean Center" loading="lazy">
     </section>
 
+    <!-- Road to Hana -->
     <section>
       <h2>🚗 おすすめロードトリップ / Recommended Road Trip</h2>
       <h3>Road to Hana</h3>
-      <img src="Hawaii/hookipa.png" class="roadtrip-img" alt="Ho‘okipa Beach">
-      <img src="Hawaii/garden.png" class="roadtrip-img" alt="Garden of Eden">
-      <img src="Hawaii/keanae.png" class="roadtrip-img" alt="Keanae Lookout">
-      <img src="Hawaii/coconutglens.png" class="roadtrip-img" alt="Coconut Glen's">
-      <img src="Hawaii/hanafarms.png" class="roadtrip-img" alt="Hana Farms">
-      <img src="Hawaii/pipiwai.png" class="roadtrip-img" alt="Pipiwai Trail">
-      <img src="Hawaii/laulima.png" class="roadtrip-img" alt="Laulima Farm">
-      <img src="Hawaii/Hana.png" class="roadtrip-img" alt="Hana Town">
+      <img src="Hawaii/hookipa.png" class="roadtrip-img" alt="Ho‘okipa Beach" loading="lazy">
+      <img src="Hawaii/garden.png" class="roadtrip-img" alt="Garden of Eden" loading="lazy">
+      <img src="Hawaii/keanae.png" class="roadtrip-img" alt="Keanae Lookout" loading="lazy">
+      <img src="Hawaii/coconutglens.png" class="roadtrip-img" alt="Coconut Glen's" loading="lazy">
+      <img src="Hawaii/hanafarms.png" class="roadtrip-img" alt="Hana Farms" loading="lazy">
+      <img src="Hawaii/pipiwai.png" class="roadtrip-img" alt="Pipiwai Trail" loading="lazy">
+      <img src="Hawaii/laulima.png" class="roadtrip-img" alt="Laulima Farm" loading="lazy">
+      <img src="Hawaii/Hana.png" class="roadtrip-img" alt="Hana Town" loading="lazy">
     </section>
 
+    <!-- Sweets -->
     <section>
       <h2>🍨 スイーツ / Sweets</h2>
       <h3>Island Vintage Coffee</h3>
-      <img src="Hawaii/acai.png" alt="Acai Bowl">
+      <img src="Hawaii/acai.png" alt="Acai Bowl" loading="lazy">
       …
       <h3>Hawaiian Shaved Ice</h3>
-      <img src="Hawaii/ice.png" alt="Shaved Ice">
+      <img src="Hawaii/ice.png" alt="Shaved Ice" loading="lazy">
     </section>
 
+    <!-- Restaurants -->
     <section>
       <h2>🍽️ レストラン / Restaurants</h2>
       <h3>53 By The Sea</h3>
-      <img src="Hawaii/53.png" alt="53 By The Sea">
-      <img src="Hawaii/pasta.png" alt="Seafood Pasta">
+      <img src="Hawaii/53.png" alt="53 By The Sea" loading="lazy">
+      <img src="Hawaii/pasta.png" alt="Seafood Pasta" loading="lazy">
       …
       <h3>Michel’s at the Colony Surf</h3>
-      <img src="Hawaii/Mitchel.png" alt="Michel's">
+      <img src="Hawaii/Mitchel.png" alt="Michel's" loading="lazy">
       …
       <h3>Nick’s Fishmarket</h3>
-      <img src="Hawaii/NIcks.png" alt="Nick's Fishmarket">
+      <img src="Hawaii/NIcks.png" alt="Nick's Fishmarket" loading="lazy">
       …
       <h3>Da Kitchen</h3>
-      <img src="Hawaii/rokomoko.png" alt="Loco Moco">
+      <img src="Hawaii/rokomoko.png" alt="Loco Moco" loading="lazy">
       …
       <h3>Mama’s Fish House</h3>
-      <img src="Hawaii/MahiMahi.png" alt="Mahi Mahi">
+      <img src="Hawaii/MahiMahi.png" alt="Mahi Mahi" loading="lazy">
     </section>
   </div>
 </body>
