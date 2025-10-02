@@ -11,7 +11,19 @@
     body{font-size:clamp(14px, 3.7vw, 16px)}
     .wrap{max-width:720px;margin:auto;padding:16px}
     header{position:relative;background:linear-gradient(90deg,#fff 0%, #fff7d6 50%, #fff 100%);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(17,24,39,.06)}
-    .ribbon{position:absolute;right:12px;top:-12px;background:var(--brand);color:#fff;padding:6px 12px;border-radius:999px;font-weight:700;box-shadow:0 10px 20px rgba(234,179,8,.25);font-size:12px}
+   .ribbon {
+  position: static;               /* 絶対配置をやめて通常フローに */
+  display: block;
+  margin: 20px auto;              /* 中央に配置 */
+  background: var(--brand);
+  color: #111827;
+  padding: 14px 28px;             /* 大きめパディング */
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: clamp(16px, 4.5vw, 22px); /* 見出しサイズ */
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(234,179,8,.25);
+}
     header h1{margin:0 0 6px 0;font-size:clamp(18px,5.2vw,26px)}
     header p{margin:4px 0;color:var(--muted)}
     h2{margin:18px 0 10px;font-size:clamp(16px,4.6vw,22px)}
@@ -69,12 +81,14 @@
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="ribbon">母の60歳お祝い / Mother’s 60th Birthday 🎉</div>
-      <h1>ハワイ家族旅行しおり / Hawaii Family Trip Itinerary</h1>
-      <p>期間 / Dates: <strong>2025年10月4日（土）〜 10月12日（日） / Oct 4 (Sat) – Oct 12 (Sun), 2025</strong><br>
-         行き先 / Destinations: <strong>オアフ島 & マウイ島 / Oahu & Maui</strong></p>
-    </header>
+    <header role="banner">
+  <div class="ribbon">
+    🎉 母の60歳お祝い 旅行しおり / Mother’s 60th Birthday Trip 🎉
+  </div>
+  <h1>ハワイ家族旅行しおり / Hawaii Family Trip Itinerary</h1>
+  <p>期間 / Dates: <strong>2025/10/4（Sat）〜 10/12（Sun）</strong><br>
+     行き先 / Destinations: <strong>Oahu & Maui</strong></p>
+</header>
 
     <!-- Itinerary -->
 <section id="itinerary">
