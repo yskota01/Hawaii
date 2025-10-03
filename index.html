@@ -124,7 +124,51 @@ th{width:140px;white-space:nowrap} /* 「Addres s」崩れ防止 */
   th{ background:#fff4cc; font-weight:600; }
   tr:nth-child(even) td{ background:#fafafa; }
 }
+/* === 印刷時の空白ページ対策パッチ ========================== */
+@media print {
 
+  /* 1) グリッド/フレックス→ブロックに戻す（分割可能に） */
+  .info-card,
+  .grid,
+  [style*="display:grid"],
+  [style*="display: grid"],
+  .flex,
+  [style*="display:flex"],
+  [style*="display: flex"] {
+    display: block !important;
+  }
+
+  /* 2) でかいコンテナには break-inside を付けない */
+  section, .wrap, .container, .info-card { 
+    break-inside: auto !important;         /* or page-break-inside:auto; */
+  }
+
+  /* 3) 改ページ指定は“片側だけ”に統一（前にだけ付ける） */
+  .page-break { 
+    break-before: page !important;         /* page-break-before:always; と同義 */
+    break-after: auto !important;          /* 後ろ側は解除 */
+  }
+
+  /* 4) 100vh 等を無効化（紙面での身長をリセット） */
+  [style*="100vh"], .full-viewport, .screen {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* 5) 画像まわり（分割は許可。はみ出し防止） */
+  img { 
+    max-width: 100% !important; 
+    height: auto !important;
+  }
+
+  /* 6) テーブルは行単位で割る（表ごと全送りを防止） */
+  table { break-inside: auto !important; }
+  tr    { break-inside: avoid !important; }
+  th,td { break-inside: avoid !important; }
+
+  /* 7) 余白調整：本文の上下マージンをやや詰める */
+  h1,h2,h3 { break-after: avoid; margin-top: 14pt; margin-bottom: 8pt; }
+}
 /* 改ページを入れたいところに <hr class="page-break"> を挿入 */
   </style>
 </head>
