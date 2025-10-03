@@ -76,7 +76,56 @@
       .wrap{max-width:980px;padding:24px}
       .info-card{grid-template-columns:2fr 1fr;gap:12px}
       .info-card img{max-height:260px}
+    
     }
+    <style>
+/* ── 基本（画面用はそのまま） ───────────────────────── */
+.info-card{display:grid;grid-template-columns:1fr 260px;gap:16px;align-items:start}
+.info-card img{width:100%;height:auto;border-radius:12px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px 10px;border-top:1px solid #e5e7eb;vertical-align:top}
+th{width:140px;white-space:nowrap} /* 「Addres s」崩れ防止 */
+
+/* ── 印刷・PDF用 ─────────────────────────────── */
+@media print{
+  /* 用紙設定（A4縦） */
+  @page{ size:A4; margin:14mm 12mm 16mm 12mm; }
+
+  /* 余計なUIを非表示 */
+  .no-print, nav, footer{ display:none !important; }
+
+  /* 文字・色の最適化 */
+  body{ font-size:11pt; color:#111827; }
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  :root{
+    /* 薄い背景は印刷でやや薄めに */
+    --bg:#ffffff; --paper:#ffffff; --thead:#fff4cc;
+  }
+
+  /* レイアウトのはみ出し防止 */
+  .wrap{ max-width: none; }
+  .info-card{ grid-template-columns: 1fr 220px; gap:12px; }
+  img{ max-height: 230mm; } /* 万一の巨大画像対策 */
+
+  /* テーブルの改ページ制御 */
+  table{ page-break-inside:auto; }
+  tr, td, th{ page-break-inside:avoid; page-break-after:auto; }
+  h2, h3{ page-break-after:avoid; margin-top:18pt; }
+
+  /* セクションごとの手動改ページ */
+  .page-break{ page-break-before:always; }
+
+  /* 見出しを少しだけ濃く */
+  h1{ font-size:16pt; margin:0 0 8pt 0; }
+  h2{ font-size:14pt; }
+  h3{ font-size:12.5pt; }
+
+  /* テーブル視認性 */
+  th{ background:#fff4cc; font-weight:600; }
+  tr:nth-child(even) td{ background:#fafafa; }
+}
+
+/* 改ページを入れたいところに <hr class="page-break"> を挿入 */
   </style>
 </head>
 <body>
@@ -188,7 +237,7 @@
 </tr>
 </table>
 </section>
-
+\<hr class="page-break">
     <!-- Hotels -->
     <section>
       <h2>🏨  Hotels</h2>
@@ -265,7 +314,7 @@
           </table>
       </div>
     </section>
-
+\<hr class="page-break">
     <!-- Maps -->
     <section>
       <h2>🗺️ Maps</h2>
@@ -274,7 +323,8 @@
       <h3>Oahu</h3>
       <img src="Hawaii/oahu-map.png" class="map-large" alt="Oahu map" loading="lazy">
     </section>
-
+\<hr class="page-break">
+    
     <!-- Golf -->
     <section>
       <h2>⛳Golf</h2>
@@ -299,6 +349,7 @@
       </div>
     </section>
 
+    \<hr class="page-break">
     <!-- Activities -->
     <section>
       <h2>🎡 Activities</h2>
@@ -365,6 +416,7 @@
       </div>
     </section>
 
+    \<hr class="page-break">
     <!-- Road to Hana -->
     <section>
       <h2>🚗 Recommended Road Trip</h2>
@@ -400,6 +452,7 @@
       </div>
     </section>
 
+    \<hr class="page-break">
     <!-- Sweets -->
     <section>
       <h2>🍨 Sweets</h2>
@@ -423,6 +476,7 @@
       </div>
     </section>
 
+    \<hr class="page-break">
     <!-- Restaurants -->
     <section>
       <h2>🍽️ Restaurants</h2>
@@ -476,6 +530,7 @@
       </div>
     </section>
 
+    \<hr class="page-break">
     <!-- Flights -->
     <section>
       <h2>✈️ Flights</h2>
